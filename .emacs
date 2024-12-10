@@ -1,17 +1,14 @@
+;; Load custom settings from a separate file
 (setq custom-file "~/.custom.el")
 (load custom-file)
 
+;; Custom variables
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+ ;; Org Mode agenda files
  '(org-agenda-files
    '("/Users/kris.fredrick/Nextcloud/Notes/Org Mode/tasks.org")))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
+;; Custom faces
+(custom-set-faces
+ ;; Add custom face settings here if needed
+)
