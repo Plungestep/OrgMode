@@ -28,4 +28,5 @@
         ("DONE"      :foreground "forest green" :weight bold)
         ("WAITING"   :foreground "orange"       :weight bold)
         ("SOMEDAY"   :foreground "magenta"      :weight bold)
-        ("CANCELLED" :foreground "forest green" :weight bold)))
+        ("CANCELLED" :foreground "forest green" :weight bold)
+        ("NEXT"      :foreground "purple"       :weight bold)))
