@@ -19,6 +19,9 @@
 (global-auto-revert-mode 1)
 (setq auto-revert-interval 1)
 
+;; Use C-c c to start capture mode
+(global-set-key (kbd "C-c c") 'org-capture)
+
 ;; Install and configure spacemacs-theme
 (use-package spacemacs-theme
   :ensure t
