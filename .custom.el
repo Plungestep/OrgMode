@@ -111,7 +111,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("/Users/kris.fredrick/Nextcloud/Notes/Org Mode/tasks.org"))
+   '("/Users/kris.fredrick/Nextcloud/Tasks/tasks.org"))
  '(package-selected-packages '(org-modern spacemacs-theme org-bullets org-super-agenda)))
 
 (custom-set-faces
