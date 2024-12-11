@@ -15,10 +15,9 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
-;; This is all to set up refile from my refile.org file.
+;; This is all to set up refile from my refile.org file to my tasks file.
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
-(setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                 (org-agenda-files :maxlevel . 9))))
+(setq org-refile-targets '(("~/Nextcloud/org/tasks.org" :maxlevel . 2)))
 
 ; Use full outline paths for refile targets - we file directly with IDO
 (setq org-refile-use-outline-path t)
@@ -35,7 +34,7 @@
 (setq ido-max-directory-size 100000)
 (ido-mode (quote both))
 
-; Use the current window when visiting files and buffers with ido
+; Use the current window when visiting files and buffers with IDO
 (setq ido-default-file-method 'selected-window)
 (setq ido-default-buffer-method 'selected-window)
 ; Use the current window for indirect buffer display
@@ -170,8 +169,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   '("/Users/kris.fredrick/Nextcloud/Tasks/tasks.org"))
+ '(org-agenda-files '("~/Nextcloud/org/tasks.org" "~/Nextcloud/org/refile.org"))
  '(package-selected-packages '(org-modern spacemacs-theme org-bullets org-super-agenda)))
 
 (custom-set-faces
@@ -179,4 +177,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-level-1 ((t (:height 1.0))))
+ '(org-level-2 ((t (:height 1.0 :weight normal)))))
