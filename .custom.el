@@ -4,6 +4,16 @@
 (require 'org)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
+;; Adding MELPA to my package archives (Not sure if this is necessary)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;; Initialize org-super-agenda (Not sure if this works)
+(require 'org-super-agenda)
+(org-super-agenda-mode)
+
 ;; Setup use-package just in case everything isn't already installed
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
