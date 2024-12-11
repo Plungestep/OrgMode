@@ -20,7 +20,8 @@
 (setq auto-revert-interval 1)
 
 ;; Set default file
-(setq org-default-notes-file "refile.org")
+(setq org-directory "~/Nextcloud/org")
+(setq org-default-notes-file "~/Nextcloud/org/refile.org")
 
 ;; Use C-c c to start capture mode
 (global-set-key (kbd "C-c c") 'org-capture)
