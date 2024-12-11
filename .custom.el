@@ -35,6 +35,12 @@
               org-startup-with-inline-images t
               org-image-actual-width '(300))
 
+;; Remove the time grid in agenda
+(setq org-agenda-use-time-grid nil)
+
+;; Enable follow mode in agenda automatically
+(setq org-agenda-start-with-follow-mode t)
+
 ;; Install and configure org-modern
 (use-package org-modern
   :hook
@@ -65,9 +71,6 @@
   (setq org-hide-emphasis-markers t
         org-log-done 'time
         org-return-follows-link t)
-
-  ;; Set tags to always align right
-  (setq org-tags-column -77)  ; Adjust this number as needed
 
   (setq org-todo-keywords
         '((sequence "STARTED(d)" "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)")))
