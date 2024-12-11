@@ -15,6 +15,10 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
+;; Enable global auto-revert
+(global-auto-revert-mode 1)
+(setq auto-revert-interval 1)
+
 ;; Install and configure spacemacs-theme
 (use-package spacemacs-theme
   :ensure t
