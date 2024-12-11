@@ -15,11 +15,44 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
+;; Install and configure spacemacs-theme
+(use-package spacemacs-theme
+  :ensure t
+  :config
+  (load-theme 'spacemacs-light t))
+
 ;; Install and configure org-super-agenda
 (use-package org-super-agenda
   :ensure t
   :config
   (org-super-agenda-mode))
+
+;; Improve org mode looks
+(setq-default org-startup-indented t
+              org-pretty-entities t
+              org-use-sub-superscripts "{}"
+              org-hide-emphasis-markers t
+              org-startup-with-inline-images t
+              org-image-actual-width '(300))
+
+;; Install and configure org-modern
+(use-package org-modern
+  :hook
+  (org-mode . global-org-modern-mode)
+  :custom
+  (org-modern-keyword nil)
+  (org-modern-checkbox nil)
+  (org-modern-table nil)
+  (org-modern-tag t)  ; Enable modern tag styling
+  (org-modern-tag-align t)  ; Enable tag alignment
+  (org-modern-todo-faces
+   '(("TODO"      :background "orange"       :foreground "black" :weight bold)
+     ("STARTED"   :background "blue"         :foreground "white" :weight bold)
+     ("NEXT"      :background "royal blue"   :foreground "white" :weight bold)
+     ("DONE"      :background "forest green" :foreground "white" :weight bold)
+     ("WAITING"   :background "gray"         :foreground "white" :weight bold)
+     ("SOMEDAY"   :background "magenta"      :foreground "white" :weight bold)
+     ("CANCELLED" :background "forest green" :foreground "white" :weight bold))))
 
 ;; Org mode configuration
 (use-package org
@@ -33,17 +66,17 @@
         org-log-done 'time
         org-return-follows-link t)
 
+  ;; Set tags to always align right
+  (setq org-tags-column -77)  ; Adjust this number as needed
+
   (setq org-todo-keywords
         '((sequence "STARTED(d)" "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)")))
 
-  (setq org-todo-keyword-faces
-        '(("TODO"      :foreground "red"          :weight bold)
-          ("STARTED"   :foreground "blue"         :weight bold)
-          ("NEXT"      :foreground "royal blue"   :weight bold)
-          ("DONE"      :foreground "forest green" :weight bold)
-          ("WAITING"   :foreground "orange"       :weight bold)
-          ("SOMEDAY"   :foreground "magenta"      :weight bold)
-          ("CANCELLED" :foreground "forest green" :weight bold)))
+  ;; Custom heading sizes and styles
+  (custom-set-faces
+   '(org-level-1 ((t (:height 1.0))))
+   '(org-level-2 ((t (:height 1.0 :weight normal))))  ; Made level 2 not bold
+  )
 
   ;; Hooks
   (add-hook 'org-mode-hook 'org-indent-mode)
@@ -72,7 +105,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    '("/Users/kris.fredrick/Nextcloud/Notes/Org Mode/tasks.org"))
- '(package-selected-packages '(org-bullets org-super-agenda)))
+ '(package-selected-packages '(org-modern spacemacs-theme org-bullets org-super-agenda)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
