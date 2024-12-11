@@ -19,6 +19,9 @@
 (global-auto-revert-mode 1)
 (setq auto-revert-interval 1)
 
+;; Set default file
+(setq org-default-notes-file "refile.org")
+
 ;; Use C-c c to start capture mode
 (global-set-key (kbd "C-c c") 'org-capture)
 
@@ -50,10 +53,22 @@
 
 ;; Setup a process for quick capture entries
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/tasks.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
-        ("n" "Note" entry (file+headline "~/org/notes.org" "Notes")
-         "* %?\n  %i\n  %a")))
+      (quote (("t" "todo" entry (file "~/git/org/refile.org")
+               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+              ("r" "respond" entry (file "~/git/org/refile.org")
+               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+              ("n" "note" entry (file "~/git/org/refile.org")
+               "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+              ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
+               "* %?\n%U\n" :clock-in t :clock-resume t)
+              ("w" "org-protocol" entry (file "~/git/org/refile.org")
+               "* TODO Review %c\n%U\n" :immediate-finish t)
+              ("m" "Meeting" entry (file "~/git/org/refile.org")
+               "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+              ("p" "Phone call" entry (file "~/git/org/refile.org")
+               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+              ("h" "Habit" entry (file "~/git/org/refile.org")
+               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
 ;; Install and configure org-modern
 (use-package org-modern
