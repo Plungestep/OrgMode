@@ -15,8 +15,7 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
-;; This is all to set up refile from my refile.org file to my tasks file.
-; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+;; Targets include this the task file, 2 levels deep.
 (setq org-refile-targets '(("~/Nextcloud/org/tasks.org" :maxlevel . 2)))
 
 ; Use full outline paths for refile targets - we file directly with IDO
