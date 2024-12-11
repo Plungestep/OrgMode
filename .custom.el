@@ -45,6 +45,13 @@
 ;; Enable follow mode in agenda automatically
 (setq org-agenda-start-with-follow-mode t)
 
+;; Setup a process for quick capture entries
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/tasks.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("n" "Note" entry (file+headline "~/org/notes.org" "Notes")
+         "* %?\n  %i\n  %a")))
+
 ;; Install and configure org-modern
 (use-package org-modern
   :hook
