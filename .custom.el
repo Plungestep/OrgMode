@@ -41,6 +41,10 @@
 
 (setq org-refile-target-verify-function 'bh/verify-refile-target)
 
+;; Turn on LOGFILE in tasks
+(setq org-log-into-drawer t)
+(setq org-clock-into-drawer t)
+
 ;; Enable global auto-revert
 (global-auto-revert-mode 1)
 (setq auto-revert-interval 1)
