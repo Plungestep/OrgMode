@@ -15,8 +15,11 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
-;; Targets include this the task file, 2 levels deep.
+;; Targets for refiling include the task file, 2 levels deep.
 (setq org-refile-targets '(("~/Nextcloud/org/tasks.org" :maxlevel . 2)))
+
+;; Specify the file for any archives.
+(setq org-archive-location "~/Nextcloud/org/archive.org::* From %s")
 
 ; Use full outline paths for refile targets - we file directly with IDO
 (setq org-refile-use-outline-path t)
