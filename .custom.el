@@ -15,8 +15,8 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
-;; Targets for refiling include the task file, 2 levels deep.
-(setq org-refile-targets '(("~/Nextcloud/org/tasks.org" :maxlevel . 2)))
+;; Targets for refiling include the task file, 9 levels deep.
+(setq org-refile-targets '(("~/Nextcloud/org/tasks.org" :maxlevel . 9)))
 
 ;; Specify the file for any archives.
 (setq org-archive-location "~/Nextcloud/org/archive.org::* From %s")
@@ -44,8 +44,6 @@
 (setq ido-default-buffer-method 'selected-window)
 ; Use the current window for indirect buffer display
 (setq org-indirect-buffer-display 'current-window)
-
-(setq org-refile-target-verify-function 'bh/verify-refile-target)
 
 ;; Turn on LOGFILE in tasks
 (setq org-log-into-drawer t)
