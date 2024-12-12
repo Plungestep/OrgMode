@@ -21,6 +21,9 @@
 ;; Specify the file for any archives.
 (setq org-archive-location "~/Nextcloud/org/archive.org::* From %s")
 
+;; Set my files to be used with the agenda view
+(setq org-agenda-files '("~/Nextcloud/org/tasks.org" "~/Nextcloud/org/refile.org"))
+
 ; Use full outline paths for refile targets - we file directly with IDO
 (setq org-refile-use-outline-path t)
 
