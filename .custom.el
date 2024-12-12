@@ -86,24 +86,14 @@
 ;; Enable follow mode in agenda automatically
 (setq org-agenda-start-with-follow-mode t)
 
-;; Setup a process for quick capture entries
+;; Set up my templates for quick capture
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "refile.org")
-               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("r" "respond" entry (file "refile.org")
-               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-              ("n" "note" entry (file "refile.org")
-               "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("j" "Journal" entry (file+datetree "diary.org")
-               "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "org-protocol" entry (file "refile.org")
-               "* TODO Review %c\n%U\n" :immediate-finish t)
-              ("m" "Meeting" entry (file "refile.org")
-               "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-              ("p" "Phone call" entry (file "refile.org")
-               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-              ("h" "Habit" entry (file "refile.org")
-               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+      '(("t" "todo" entry (file "~/Nextcloud/org/refile.org")
+         "* TODO %?\n:LOGBOOK:\n- State \"TODO\" from %U\n:END:\n%a\n")
+        ("n" "note" entry (file "~/Nextcloud/org/refile.org")
+         "* %? :NOTE:\n:LOGBOOK:\n- Note created on %U\n:END:\n%a\n")
+        ("j" "journal" entry (file+datetree "~/Nextcloud/org/journal.org")
+         "* %?\n:LOGBOOK:\n- Created on %U\n:END:\n")))
 
 ;; Install and configure org-modern
 (use-package org-modern
