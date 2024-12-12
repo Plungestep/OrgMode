@@ -136,7 +136,7 @@
         org-return-follows-link t)
 
   (setq org-todo-keywords
-        '((sequence "STARTED(r)" "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)")))
+        '((sequence "STARTED(r/!)" "TODO(t@/!)" "NEXT(n/!)" "WAITING(w@/!)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c@)")))
 
   ;; Custom heading sizes and styles
   (custom-set-faces
