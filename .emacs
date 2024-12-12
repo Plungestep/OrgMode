@@ -4,9 +4,7 @@
 
 ;; Custom variables
 (custom-set-variables
- ;; Org Mode agenda files
- '(org-agenda-files
-   '("/Users/kris.fredrick/Nextcloud/Notes/Org Mode/tasks.org")))
+ ;; Add custom variables here if needed)
 
 ;; Custom faces
 (custom-set-faces
