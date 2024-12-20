@@ -5,6 +5,14 @@
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; When I open my tasks, I only want the second level showing
+(defun my-org-show-second-level-only ()
+  (interactive)
+  (org-content 2))  ;; This will show headings up to level 2
+
+;; Add a hook to run this function when opening an Org file
+(add-hook 'org-mode-hook 'my-org-show-second-level-only)
+
 ;; Install and configure nerd-icons
 (use-package nerd-icons
   :ensure t
