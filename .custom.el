@@ -6,6 +6,13 @@
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; Install and configure nerd-icons
+(use-package nerd-icons
+  :ensure t
+  :custom
+  ;; Replace "YourNerdFontName" with your installed Nerd Font name
+  (nerd-icons-font-family "0xProto Nerd Font"))
+
 ;; Sane default settings
 (delete-selection-mode 1)    ;; You can select text and delete it by typing.
 (electric-indent-mode -1)    ;; Turn off the weird indenting that Emacs does by default.
