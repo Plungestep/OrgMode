@@ -13,6 +13,9 @@
 ;; Add a hook to run this function when opening an Org file
 (add-hook 'org-mode-hook 'my-org-show-second-level-only)
 
+;; Add a tag to show ordered tasks
+(org-track-ordered-property-with-tag t)
+
 ;; Install and configure nerd-icons
 (use-package nerd-icons
   :ensure t
@@ -56,7 +59,7 @@
   ;;(setq dashboard-startup-banner "~/.config/emacs/images/dtmacs-logo.png")  ;; use custom image as banner
   (setq dashboard-center-content nil) ;; set to 't' for centered content
   (setq dashboard-items '((recents . 5)
-                          (agenda . 5 )
+                          (agenda . 8 )
                           (bookmarks . 3)
                           (projects . 3)))
   :custom 
@@ -168,6 +171,7 @@
    '(("TODO"      :background "orange"       :foreground "black" :weight bold)
      ("STARTED"   :background "blue"         :foreground "white" :weight bold)
      ("NEXT"      :background "royal blue"   :foreground "white" :weight bold)
+     ("PROJECT"      :background "royal blue"   :foreground "white" :weight bold)
      ("DONE"      :background "forest green" :foreground "white" :weight bold)
      ("WAITING"   :background "gray"         :foreground "white" :weight bold)
      ("SOMEDAY"   :background "magenta"      :foreground "white" :weight bold)
@@ -186,7 +190,7 @@
         org-return-follows-link t)
 
   (setq org-todo-keywords
-        '((sequence "TODO(t@/!)" "NEXT(n/!)" "STARTED(r/!)" "WAITING(w@/!)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c@)")))
+        '((sequence "TODO(t@/!)" "NEXT(n/!)" "STARTED(r/!)" "PROJECT(n/!)" "WAITING(w@/!)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c@)")))
 
   ;; Custom heading sizes and styles
   (custom-set-faces
