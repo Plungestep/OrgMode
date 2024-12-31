@@ -20,6 +20,15 @@
   ;; Replace "YourNerdFontName" with your installed Nerd Font name
   (nerd-icons-font-family "0xProto Nerd Font"))
 
+(custom-set-faces
+ '(org-agenda-date
+   ((t (:foreground "blue" :weight bold :height 1.1)))) ; Change "blue" to your desired color
+ '(org-agenda-date-weekend
+   ((t (:foreground "red" :weight bold :height 1.1)))) ; Change "red" to your desired color for weekends
+ '(org-agenda-date-today
+   ((t (:foreground "dark green" :weight bold :underline t :height 1.2)))) ; Change "green" to your desired color for today
+)
+
 ;; Sane default settings
 (delete-selection-mode 1)    ;; You can select text and delete it by typing.
 (electric-indent-mode -1)    ;; Turn off the weird indenting that Emacs does by default.
