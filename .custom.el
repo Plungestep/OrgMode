@@ -65,7 +65,7 @@
   ;;(setq dashboard-startup-banner "~/.config/emacs/images/dtmacs-logo.png")  ;; use custom image as banner
   (setq dashboard-center-content nil) ;; set to 't' for centered content
   (setq dashboard-items '((recents . 5)
-                          (agenda . 8 )
+                          (agenda . 14 )
                           (bookmarks . 3)
                           (projects . 3)))
   :custom 
